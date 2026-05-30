@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Todas as Figurinhas da Copa 2026 — PDF Completo + Extras</title>
+<meta name="description" content="A coleção definitiva da Copa 2026 em PDF. +900 figurinhas, extras exclusivos, alta resolução e pronto para imprimir." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   TOKENS — Paleta da arte Panini/FIFA
+   ============================================ */
+:root{
+  --verde-stadium:  #0a3a1f;
+  --verde-noite:    #051f10;
+  --verde-grama:    #0d6b2e;
+  --verde-claro:    #1ea64a;
+  --verde-neon:     #3fe673;
+  --amarelo:        #ffd200;
+  --amarelo-quente: #ffb700;
+  --dourado:        #e6b450;
+  --dourado-claro:  #ffd97a;
+  --vermelho:       #c8161d;
+  --vermelho-claro: #e63946;
+  --azul-card:      #1a4d8f;
+  --branco:         #ffffff;
+  --preto-stadium:  #08130a;
+
+  --font-display: 'Anton', 'Bebas Neue', sans-serif;
+  --font-body:    'Manrope', system-ui, sans-serif;
+
+  --radius:    14px;
+  --radius-lg: 22px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  color:var(--branco);
+  background:var(--verde-noite);
+  overflow-x:hidden;
+  line-height:1.55;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none}
+
+.container{width:min(1180px, 92%);margin:0 auto}
+
+/* ============================================
+   FUNDO ESTÁDIO — usado em várias seções
+   ============================================ */
+.stadium-bg{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse 800px 400px at 10% 20%, rgba(63,230,115,.22), transparent 60%),
+    radial-gradient(ellipse 800px 400px at 90% 20%, rgba(255,210,0,.18), transparent 60%),
+    radial-gradient(ellipse 600px 300px at 50% 80%, rgba(13,107,46,.5), transparent 70%),
+    linear-gradient(180deg, #051f10 0%, #0a3a1f 50%, #051f10 100%);
+}
+/* Refletores */
+.stadium-bg::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(ellipse 180px 500px at 12% -5%, rgba(255,255,255,.16), transparent 70%),
+    radial-gradient(ellipse 180px 500px at 50% -5%, rgba(255,210,0,.22), transparent 70%),
+    radial-gradient(ellipse 180px 500px at 88% -5%, rgba(255,255,255,.16), transparent 70%);
+}
+/* Textura sutil de torcida/grão */
+.stadium-bg::after{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.06;
+  background-image: radial-gradient(circle at 25% 30%, #fff 1px, transparent 2px),
+                    radial-gradient(circle at 75% 70%, #fff 1px, transparent 2px);
+  background-size:60px 60px, 90px 90px;
+}
+
+/* ============================================
+   TIPOGRAFIA 3D ESPORTIVA
+   ============================================ */
+.title-3d{
+  font-family:var(--font-display);
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--branco);
+  text-shadow:
+    0 1px 0 #d4d4d4,
+    0 2px 0 #b8b8b8,
+    0 3px 0 #9a9a9a,
+    0 4px 0 #7c7c7c,
+    0 5px 0 #5e5e5e,
+    0 6px 8px rgba(0,0,0,.7),
+    0 10px 30px rgba(0,0,0,.5);
+  line-height:.95;
+}
+.title-3d.yellow{
+  color:var(--amarelo);
+  text-shadow:
+    0 1px 0 #d4a300,
+    0 2px 0 #b88c00,
+    0 3px 0 #9a7600,
+    0 4px 0 #7c5e00,
+    0 5px 0 #5e4500,
+    0 6px 8px rgba(0,0,0,.7),
+    0 10px 30px rgba(0,0,0,.5);
+}
+
+/* ============================================
+   BOTÕES
+   ============================================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  padding:1.1rem 2rem;
+  font-family:var(--font-display);
+  font-size:1.25rem;letter-spacing:1.5px;
+  border-radius:50px;
+  text-transform:uppercase;
+  transition:transform .25s, box-shadow .25s, filter .25s;
+  text-align:center;
+}
+.btn-primary{
+  background:linear-gradient(180deg, #2bd565 0%, #1ea64a 60%, #136c30 100%);
+  color:#fff;
+  border:2px solid var(--verde-neon);
+  box-shadow:
+    0 0 0 4px rgba(63,230,115,.15),
+    0 12px 30px rgba(30,166,74,.45),
+    inset 0 -4px 0 rgba(0,0,0,.25);
+  position:relative;overflow:hidden;
+  text-shadow: 0 2px 4px rgba(0,0,0,.4);
+}
+.btn-primary::after{
+  content:"";position:absolute;top:0;left:-100%;
+  width:50%;height:100%;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);
+  transform:skewX(-25deg);
+  animation: shine 3s infinite;
+}
+@keyframes shine{0%{left:-100%}60%,100%{left:200%}}
+.btn-primary:hover{transform:translateY(-3px) scale(1.03);filter:brightness(1.1)}
+
+.btn-cta{
+  font-size:1.5rem;padding:1.4rem 2.6rem;
+  background:linear-gradient(180deg, #ff3a3a 0%, #c8161d 60%, #8b0e13 100%);
+  border-color:#ff7070;
+  box-shadow:
+    0 0 0 4px rgba(255,58,58,.15),
+    0 12px 30px rgba(200,22,29,.5),
+    inset 0 -4px 0 rgba(0,0,0,.3);
+}
+
+/* ============================================
+   NAV
+   ============================================ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:.8rem 0;
+  background:rgba(5,31,16,.85);
+  backdrop-filter: blur(14px);
+  border-bottom:2px solid var(--amarelo);
+}
+nav .container{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{
+  font-family:var(--font-display);
+  font-size:1.5rem;letter-spacing:2px;
+  color:var(--branco);
+  display:flex;align-items:center;gap:.55rem;
+}
+.logo-ball{
+  width:28px;height:28px;border-radius:50%;
+  background: radial-gradient(circle at 30% 30%, #fff, #ddd 40%, #444 80%);
+  position:relative;
+  animation: spin 6s linear infinite;
+  flex-shrink:0;
+}
+.logo-ball::before{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  background:
+    radial-gradient(circle at 50% 50%, #000 0 5px, transparent 6px),
+    radial-gradient(circle at 20% 30%, #000 0 2.5px, transparent 3.5px),
+    radial-gradient(circle at 80% 30%, #000 0 2.5px, transparent 3.5px),
+    radial-gradient(circle at 30% 75%, #000 0 2.5px, transparent 3.5px),
+    radial-gradient(circle at 75% 80%, #000 0 2.5px, transparent 3.5px);
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.logo .y{color:var(--amarelo)}
+nav .btn{padding:.65rem 1.3rem;font-size:.9rem}
+
+/* ============================================
+   FAIXA DE BANDEIRAS — TOPO HERO
+   ============================================ */
+.flags-bar{
+  position:relative;
+  background:linear-gradient(180deg, rgba(0,0,0,.6), transparent);
+  padding: 5.5rem 0 .8rem;
+  z-index:3;
+  overflow:hidden;
+}
+.flags-track{
+  display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;
+  padding:0 1rem;
+  font-size:1.8rem;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,.5));
+}
+.flags-track span{
+  display:inline-block;
+  transition:transform .3s;
+}
+.flags-track span:hover{transform:translateY(-4px) scale(1.15)}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero{
+  position:relative;
+  padding:1rem 0 4rem;
+  text-align:center;
+  isolation:isolate;
+}
+.hero-confettis{
+  position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden;
+}
+.confetti{
+  position:absolute;width:10px;height:14px;
+  top:-20px;
+  animation: fall linear infinite;
+}
+@keyframes fall{
+  0%{transform:translateY(-50px) rotate(0)}
+  100%{transform:translateY(120vh) rotate(720deg)}
+}
+
+.hero-content{position:relative;z-index:2}
+
+.eyebrow-ribbon{
+  display:inline-block;
+  background:var(--amarelo);
+  color:var(--preto-stadium);
+  font-family:var(--font-display);
+  font-size:1rem;letter-spacing:2px;
+  padding:.55rem 1.6rem;
+  margin-bottom:1.5rem;
+  border:2px solid var(--dourado);
+  box-shadow: 0 4px 0 #856b00, 0 8px 16px rgba(0,0,0,.4);
+  position:relative;
+}
+.eyebrow-ribbon::before, .eyebrow-ribbon::after{
+  content:"★";color:var(--preto-stadium);margin:0 .4rem;
+}
+
+.hero h1{
+  font-size: clamp(2.8rem, 10vw, 7rem);
+  margin: 0 auto 1.5rem;
+  max-width: 980px;
+}
+.hero h1 .line{display:block}
+
+.ribbon-pdf{
+  display:inline-block;
+  background:linear-gradient(180deg, #e63946 0%, #c8161d 100%);
+  color:var(--branco);
+  font-family:var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing:1.5px;
+  padding:.8rem 2.4rem;
+  border:3px solid var(--dourado-claro);
+  box-shadow:
+    0 6px 0 #8b0e13,
+    0 12px 24px rgba(0,0,0,.5);
+  position:relative;
+  margin-bottom:2.5rem;
+  text-shadow:0 2px 4px rgba(0,0,0,.4);
+  transform: rotate(-1.5deg);
+  cursor:pointer;
+  transition: transform .25s, box-shadow .25s, filter .25s;
+  text-decoration:none;
+}
+.ribbon-pdf:hover{
+  transform: rotate(-1.5deg) translateY(-3px) scale(1.04);
+  box-shadow:
+    0 9px 0 #8b0e13,
+    0 18px 32px rgba(0,0,0,.55),
+    0 0 30px rgba(230,57,70,.45);
+  filter: brightness(1.08);
+}
+.ribbon-pdf:active{
+  transform: rotate(-1.5deg) translateY(2px);
+  box-shadow:
+    0 3px 0 #8b0e13,
+    0 6px 12px rgba(0,0,0,.5);
+}
+.ribbon-pdf .ico{
+  display:inline-block;
+  background:var(--branco);color:var(--vermelho);
+  font-family:var(--font-body);font-weight:900;
+  font-size:.6em;
+  padding:2px 7px;border-radius:4px;
+  margin-right:.5rem;
+  vertical-align:middle;
+}
+
+/* SELOS LATERAIS (versão hero — em grid) */
+.seals-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:.8rem;
+  max-width:980px;margin:0 auto 2.5rem;
+}
+.seal-box{
+  display:flex;align-items:center;gap:.7rem;
+  background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.35));
+  border:2px solid var(--amarelo);
+  border-radius:10px;
+  padding:.8rem 1rem;
+  text-align:left;
+  box-shadow: inset 0 0 20px rgba(255,210,0,.08);
+}
+.seal-box .ico{
+  font-size:1.6rem;
+  color:var(--amarelo);
+  flex-shrink:0;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.5));
+}
+.seal-box .txt{
+  font-family:var(--font-display);
+  font-size:.85rem;
+  line-height:1.05;letter-spacing:.5px;
+  color:var(--branco);
+}
+.seal-box .txt .hl{color:var(--amarelo);display:block;font-size:1rem}
+
+.hero-cta-wrap{margin: 0 0 2.5rem}
+.hero-sub{
+  color:#cfe5d4;font-size:1.05rem;
+  max-width:580px;margin:1rem auto 0;
+}
+
+/* ============================================
+   CRONÔMETRO — PLACAR DIGITAL
+   ============================================ */
+.timer-section{
+  background: var(--preto-stadium);
+  padding: 2rem 0;
+  position:relative;
+  border-top: 3px solid var(--verde-neon);
+  border-bottom: 3px solid var(--amarelo);
+  overflow:hidden;
+}
+.timer-section::before{
+  content:"";position:absolute;inset:0;
+  background:
+    repeating-linear-gradient(0deg, rgba(63,230,115,.04) 0 2px, transparent 2px 4px);
+  pointer-events:none;
+}
+.timer-wrap{
+  text-align:center;
+  position:relative;z-index:1;
+}
+.timer-label{
+  font-family:var(--font-display);
+  font-size: clamp(1rem, 2.2vw, 1.5rem);
+  letter-spacing:2.5px;
+  color:var(--verde-neon);
+  text-shadow:
+    0 0 8px rgba(63,230,115,.8),
+    0 0 18px rgba(63,230,115,.5),
+    0 0 30px rgba(63,230,115,.3);
+  margin-bottom:1rem;
+  text-transform:uppercase;
+}
+.timer-display{
+  display:inline-flex;
+  gap:.6rem;
+  padding: 1rem 1.4rem;
+  background:
+    linear-gradient(180deg, #0a1f0d 0%, #050f07 100%);
+  border:2px solid var(--verde-neon);
+  border-radius:14px;
+  box-shadow:
+    0 0 0 4px rgba(63,230,115,.1),
+    0 0 24px rgba(63,230,115,.4),
+    0 0 50px rgba(63,230,115,.2),
+    inset 0 0 24px rgba(63,230,115,.1);
+  position:relative;
+}
+.timer-block{
+  display:flex;flex-direction:column;align-items:center;
+}
+.timer-block .digits{
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  line-height:1;
+  color: var(--amarelo);
+  text-shadow:
+    0 0 8px rgba(255,210,0,.9),
+    0 0 18px rgba(255,210,0,.6),
+    0 0 30px rgba(255,184,0,.4);
+  letter-spacing:2px;
+  font-variant-numeric: tabular-nums;
+  min-width: 1.6em;
+  text-align:center;
+}
+.timer-block .lbl{
+  font-family:var(--font-display);
+  font-size:.7rem;
+  letter-spacing:2.5px;
+  color: var(--verde-neon);
+  margin-top:.3rem;
+  text-shadow: 0 0 6px rgba(63,230,115,.7);
+}
+.timer-sep{
+  font-family:'Anton',sans-serif;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  color: var(--amarelo);
+  line-height:1;
+  text-shadow: 0 0 12px rgba(255,210,0,.8);
+  animation: blink 1s infinite;
+}
+@keyframes blink{50%{opacity:.25}}
+.timer-urgency{
+  margin-top:1rem;
+  color:#cfe5d4;font-size:.82rem;
+  display:inline-flex;align-items:center;gap:.5rem;
+}
+.pulse-dot{
+  width:8px;height:8px;border-radius:50%;background:#ff3a3a;
+  animation: pulse 1.4s ease-in-out infinite;
+  box-shadow: 0 0 10px #ff3a3a;
+}
+@keyframes pulse{
+  0%,100%{transform:scale(1);opacity:1}
+  50%{transform:scale(1.5);opacity:.5}
+}
+.timer-expired{
+  font-family:var(--font-display);
+  font-size:clamp(1.5rem, 4vw, 2.4rem);
+  color:#ff5555;letter-spacing:2px;
+  text-shadow: 0 0 10px rgba(255,80,80,.8);
+}
+
+/* ============================================
+   PLACAR FAIXA (stats)
+   ============================================ */
+.scoreboard{
+  background: linear-gradient(90deg, #051f10 0%, #0d6b2e 50%, #051f10 100%);
+  padding:1.8rem 0;
+  border-top: 3px solid var(--amarelo);
+  border-bottom: 3px solid var(--amarelo);
+  text-align:center;
+}
+.scoreboard .row{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+}
+.score-item .num{
+  font-family:var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color:var(--amarelo);
+  line-height:1;
+  text-shadow: 0 0 14px rgba(255,210,0,.5);
+}
+.score-item .lbl{
+  font-size:.78rem;color:#dfeee3;letter-spacing:2px;
+  text-transform:uppercase;margin-top:.3rem;
+}
+
+/* ============================================
+   IMPACTO
+   ============================================ */
+.impact{
+  padding:5rem 0;text-align:center;
+}
+.impact h2{
+  font-family:var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height:1.1;
+  max-width: 880px;margin:0 auto;letter-spacing:1px;
+  color:var(--branco);
+}
+.impact h2 .hl{color:var(--amarelo)}
+.impact .sub{
+  margin-top:1.5rem;font-size:1.1rem;color:#cfe5d4;max-width:680px;margin-left:auto;margin-right:auto;
+}
+
+/* ============================================
+   SEÇÃO EXTRAS STICKERS
+   ============================================ */
+.extras{
+  padding:6rem 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 50% 0%, rgba(255,210,0,.12), transparent 70%),
+    linear-gradient(180deg, #051f10 0%, #0a3a1f 100%);
+  position:relative;overflow:hidden;
+}
+.extras::before{
+  content:"";position:absolute;inset:0;opacity:.07;
+  background-image:
+    radial-gradient(circle at 20% 30%, var(--amarelo) 1px, transparent 2px),
+    radial-gradient(circle at 70% 60%, var(--verde-neon) 1px, transparent 2px);
+  background-size:80px 80px, 110px 110px;
+  pointer-events:none;
+}
+.extras-grid{
+  display:grid;grid-template-columns: 1fr 1fr;gap:3rem;
+  align-items:center;position:relative;z-index:1;
+}
+.extras-text .premium-tag{
+  display:inline-block;
+  background: linear-gradient(135deg, var(--amarelo), var(--dourado));
+  color: var(--preto-stadium);
+  font-family:var(--font-display);
+  font-size:.85rem;letter-spacing:3px;
+  padding:.45rem 1.2rem;border-radius:50px;
+  margin-bottom:1.2rem;
+  box-shadow: 0 6px 18px rgba(255,210,0,.4);
+}
+.extras-text h2{
+  font-family:var(--font-display);
+  font-size:clamp(2rem, 4.5vw, 3.4rem);
+  letter-spacing:1px;line-height:1;
+  margin-bottom:1.2rem;
+  color:var(--branco);
+}
+.extras-text h2 .gold{
+  background:linear-gradient(180deg, #fff5b0 0%, #ffd200 40%, #e6a200 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.extras-text p{
+  color:#cfe5d4;font-size:1.05rem;margin-bottom:1.5rem;
+}
+.extras-list{list-style:none}
+.extras-list li{
+  display:flex;align-items:center;gap:.6rem;
+  padding:.5rem 0;
+  color:#e5f2e8;font-weight:600;
+}
+.extras-list li::before{
+  content:"★";color:var(--amarelo);font-size:1.1rem;
+  text-shadow:0 0 8px rgba(255,210,0,.6);
+}
+
+/* Mockups das figurinhas extras */
+.extras-mockup{
+  position:relative;
+}
+.extras-mockup:not(.video-wrap){
+  height:460px;
+}
+.sticker-card{
+  position:absolute;
+  width: 180px;
+  aspect-ratio: 3/4.2;
+  border-radius:12px;
+  padding:.7rem;
+  display:flex;flex-direction:column;
+  background: linear-gradient(160deg, #1c2d6b 0%, #0a1e4a 100%);
+  border:3px solid var(--dourado);
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.6),
+    0 0 30px rgba(255,210,0,.25),
+    inset 0 0 30px rgba(255,210,0,.08);
+  transition: transform .4s;
+  overflow:hidden;
+}
+.sticker-card::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(115deg, transparent 35%, rgba(255,255,255,.18) 50%, transparent 65%);
+  animation: holo 5s infinite linear;
+}
+@keyframes holo{
+  0%{transform:translateX(-100%)}
+  100%{transform:translateX(100%)}
+}
+.sticker-rare{
+  background: linear-gradient(160deg, #4a0d6e 0%, #1a0335 100%);
+  border-color: var(--verde-neon);
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.6),
+    0 0 30px rgba(63,230,115,.4);
+}
+.sticker-gold{
+  background: linear-gradient(160deg, #c8941f 0%, #6e4d0a 100%);
+  border-color: #fff5b0;
+}
+.sc-top{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:.5rem;font-size:.65rem;
+  color:var(--amarelo);font-weight:800;letter-spacing:1px;
+  position:relative;z-index:1;
+}
+.sc-num{
+  background:var(--amarelo);color:#1a1300;
+  padding:2px 6px;border-radius:4px;
+  font-family:var(--font-display);font-size:.75rem;letter-spacing:1px;
+}
+.sc-photo{
+  flex:1;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(255,255,255,.2), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(0,0,0,.3));
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:3.5rem;
+  position:relative;z-index:1;
+}
+.sc-bottom{
+  margin-top:.5rem;
+  text-align:center;
+  position:relative;z-index:1;
+}
+.sc-bottom .nm{
+  font-family:var(--font-display);
+  font-size:.95rem;color:var(--branco);letter-spacing:1.5px;line-height:1;
+}
+.sc-bottom .tg{
+  font-size:.65rem;color:var(--amarelo);letter-spacing:2px;
+  margin-top:.2rem;
+}
+.sc-rarity{
+  position:absolute;bottom:6px;right:6px;
+  background:linear-gradient(90deg, #ff3a3a, #ffd200);
+  color:#1a1300;
+  font-family:var(--font-display);font-size:.6rem;
+  padding:2px 5px;border-radius:3px;letter-spacing:1px;
+  z-index:2;
+}
+/* Posições dos cards */
+.s-card-1{top:0;left:5%;transform:rotate(-9deg);z-index:2}
+.s-card-2{top:30px;left:32%;transform:rotate(3deg);z-index:3}
+.s-card-3{top:60px;right:8%;transform:rotate(11deg);z-index:2}
+.s-card-4{bottom:30px;left:18%;transform:rotate(7deg);z-index:1}
+.s-card-5{bottom:0;right:25%;transform:rotate(-5deg);z-index:1}
+.sticker-card:hover{transform:rotate(0) scale(1.08) translateY(-10px);z-index:5}
+
+/* ============================================
+   OFERTA
+   ============================================ */
+.offer{
+  padding:6rem 0;text-align:center;
+  position:relative;overflow:hidden;
+}
+.offer-box{
+  max-width:760px;margin:0 auto;
+  background: linear-gradient(160deg, rgba(0,0,0,.55), rgba(0,0,0,.25));
+  border: 3px solid var(--amarelo);
+  border-radius:24px;
+  padding:3rem 2rem;
+  position:relative;
+  box-shadow:
+    0 0 0 6px rgba(255,210,0,.1),
+    0 20px 60px rgba(0,0,0,.5),
+    0 0 50px rgba(255,210,0,.25);
+}
+.offer-tag{
+  position:absolute;top:-22px;left:50%;transform:translateX(-50%);
+  background: linear-gradient(180deg, #ff3a3a 0%, #c8161d 100%);
+  color:#fff;
+  font-family:var(--font-display);letter-spacing:2px;
+  padding:.6rem 1.6rem;border-radius:50px;font-size:1rem;
+  box-shadow:0 6px 20px rgba(200,22,29,.6);
+  border: 2px solid var(--dourado-claro);
+  text-shadow:0 1px 3px rgba(0,0,0,.4);
+}
+.offer h2{
+  font-family:var(--font-display);
+  font-size:clamp(1.6rem, 3.2vw, 2.6rem);letter-spacing:1px;
+  margin-bottom:2rem;color:var(--branco);
+  line-height:1.05;
+}
+.price-row{
+  display:flex;align-items:center;justify-content:center;
+  gap:2rem;flex-wrap:wrap;margin-bottom:2rem;
+}
+.price-old{
+  color:#9ec4a8;font-size:1.3rem;
+  text-decoration:line-through;text-decoration-color:#ff5555;
+  text-decoration-thickness:3px;
+  font-family:var(--font-display);letter-spacing:1px;
+}
+.price-old .lbl{
+  display:block;font-size:.8rem;color:#9ec4a8;
+  text-decoration:none;margin-bottom:.2rem;letter-spacing:2px;
+}
+.price-new-wrap{position:relative}
+.price-new-wrap .lbl{
+  display:block;font-family:var(--font-display);
+  font-size:1rem;color:var(--amarelo);letter-spacing:3px;
+  margin-bottom:.2rem;
+}
+.price-new{
+  font-family:var(--font-display);
+  font-size:clamp(3rem, 9vw, 6rem);
+  color:var(--branco);
+  line-height:1;
+  text-shadow:
+    0 1px 0 #ccc,0 2px 0 #aaa,0 3px 0 #888,0 4px 0 #666,
+    0 6px 15px rgba(0,0,0,.7),
+    0 0 30px rgba(255,210,0,.4);
+}
+.price-new .currency{font-size:.5em;vertical-align:top;margin-right:.15em;color:var(--amarelo)}
+.price-new .cents{font-size:.45em;vertical-align:top}
+.price-sub{margin:0 0 2rem;color:#cfe5d4;font-size:1rem}
+
+/* ============================================
+   GARANTIAS RODAPÉ
+   ============================================ */
+.guarantees{
+  padding:5rem 0;
+  background: linear-gradient(180deg, #051f10 0%, #08130a 100%);
+  border-top:1px solid rgba(255,210,0,.2);
+}
+.gua-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;
+}
+.gua-item{
+  text-align:center;
+  padding:1.5rem 1rem;
+}
+.gua-icon{
+  width:60px;height:60px;margin:0 auto 1rem;
+  background:linear-gradient(135deg, var(--amarelo), var(--dourado));
+  color:var(--preto-stadium);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.7rem;font-weight:900;
+  box-shadow: 0 8px 24px rgba(255,210,0,.3);
+}
+.gua-item h4{
+  font-family:var(--font-display);
+  font-size:1.15rem;color:var(--branco);
+  letter-spacing:1px;margin-bottom:.4rem;line-height:1;
+}
+.gua-item h4 .y{color:var(--amarelo);display:block}
+.gua-item p{color:#9ec4a8;font-size:.85rem;line-height:1.45}
+
+/* ============================================
+   FAQ
+   ============================================ */
+.faq{
+  padding:6rem 0;
+  background: linear-gradient(180deg, #08130a 0%, #051f10 100%);
+}
+.faq-title{text-align:center;margin-bottom:3rem}
+.faq-title .eyebrow{
+  display:inline-block;color:var(--amarelo);
+  font-family:var(--font-display);
+  letter-spacing:3px;font-size:.95rem;margin-bottom:.6rem;
+}
+.faq-title h2{
+  font-family:var(--font-display);
+  font-size:clamp(2rem, 4.5vw, 3rem);letter-spacing:1px;
+  color:var(--branco);
+}
+.faq-list{max-width:780px;margin:0 auto}
+.faq-item{
+  background:rgba(0,0,0,.4);
+  border:2px solid rgba(255,210,0,.2);
+  border-radius:var(--radius);
+  margin-bottom:1rem;
+  overflow:hidden;
+  transition: border-color .3s;
+}
+.faq-item.open{border-color:var(--amarelo)}
+.faq-q{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.3rem 1.5rem;cursor:pointer;
+  font-weight:700;font-size:1.05rem;color:var(--branco);
+}
+.faq-q::after{
+  content:"+";font-family:var(--font-display);
+  font-size:1.8rem;color:var(--amarelo);
+  transition:transform .3s;
+}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease, padding .3s;
+  padding:0 1.5rem;color:#cfe5d4;
+}
+.faq-item.open .faq-a{
+  max-height:260px;padding:0 1.5rem 1.3rem;
+}
+
+/* ============================================
+   CTA FINAL
+   ============================================ */
+.final-cta{
+  padding:5rem 0;text-align:center;
+  background:
+    radial-gradient(ellipse at center, rgba(255,210,0,.18), transparent 60%),
+    linear-gradient(180deg, #051f10 0%, #0a3a1f 100%);
+}
+.final-cta .trophy{
+  font-size:5rem;margin-bottom:1rem;
+  filter: drop-shadow(0 10px 30px rgba(255,210,0,.5));
+  animation: floatTrophy 3s ease-in-out infinite;
+}
+@keyframes floatTrophy{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-15px)}
+}
+.final-cta h2{
+  font-family:var(--font-display);
+  font-size:clamp(2rem, 5vw, 3.5rem);
+  letter-spacing:1px;line-height:1;
+  color:var(--branco);margin-bottom:.5rem;
+}
+.final-cta h2 .y{color:var(--amarelo)}
+.final-cta p{color:#cfe5d4;margin-bottom:2rem;font-size:1.1rem}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer{
+  background:var(--preto-stadium);
+  color:#7da185;
+  padding:3rem 0 2rem;
+  text-align:center;
+  border-top:3px solid var(--amarelo);
+}
+footer .logo{justify-content:center;margin-bottom:1rem}
+footer p{font-size:.9rem;margin-bottom:.3rem}
+footer .disc{font-size:.78rem;color:#5e7b66;margin-top:1rem;max-width:520px;margin-left:auto;margin-right:auto}
+
+/* ============================================
+   COMPARAÇÃO — TOPO DA LANDING
+   ============================================ */
+.comparison{
+  padding:5rem 0;
+  background:
+    radial-gradient(ellipse 700px 400px at 50% 0%, rgba(255,210,0,.12), transparent 70%),
+    linear-gradient(180deg, #051f10 0%, #0a3a1f 100%);
+  position:relative;overflow:hidden;
+}
+.comparison::before{
+  content:"";position:absolute;inset:0;opacity:.07;
+  background-image:
+    radial-gradient(circle at 20% 30%, var(--amarelo) 1px, transparent 2px),
+    radial-gradient(circle at 70% 60%, var(--verde-neon) 1px, transparent 2px);
+  background-size:80px 80px, 110px 110px;
+  pointer-events:none;
+}
+.comp-title{text-align:center;margin-bottom:2.5rem;position:relative;z-index:1}
+.comp-title .eyebrow{
+  display:inline-block;
+  background: linear-gradient(135deg, var(--amarelo), var(--dourado));
+  color: var(--preto-stadium);
+  font-family:var(--font-display);
+  font-size:.85rem;letter-spacing:3px;
+  padding:.45rem 1.2rem;border-radius:50px;
+  margin-bottom:1.2rem;
+  box-shadow: 0 6px 18px rgba(255,210,0,.4);
+}
+.comp-title h2{
+  font-family:var(--font-display);
+  font-size:clamp(2rem, 4.8vw, 3.4rem);
+  letter-spacing:1px;line-height:1;
+  color:var(--branco);
+  margin-bottom:.8rem;
+}
+.comp-title h2 .y{color:var(--amarelo)}
+.comp-title p{color:#cfe5d4;font-size:1.05rem;max-width:620px;margin:0 auto}
+
+.comp-frame{
+  max-width:780px;margin:0 auto;
+  position:relative;z-index:1;
+  border-radius:20px;
+  overflow:hidden;
+  border:3px solid var(--amarelo);
+  box-shadow:
+    0 0 0 6px rgba(255,210,0,.12),
+    0 25px 60px rgba(0,0,0,.6),
+    0 0 50px rgba(255,210,0,.25);
+  background:#000;
+}
+.comp-frame img{
+  width:100%;height:auto;display:block;
+}
+
+.comp-badges{
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:1rem;margin-top:2rem;
+  position:relative;z-index:1;
+}
+.comp-cta{
+  text-align:center;
+  margin-top:2.5rem;
+  position:relative;z-index:1;
+}
+.comp-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(0,0,0,.5);
+  border:2px solid var(--verde-neon);
+  color:var(--branco);
+  font-family:var(--font-display);
+  font-size:.9rem;letter-spacing:1.5px;
+  padding:.6rem 1.2rem;
+  border-radius:50px;
+  box-shadow: 0 0 16px rgba(63,230,115,.25);
+}
+.comp-badge .ico{
+  color:var(--verde-neon);font-size:1.1rem;
+  filter: drop-shadow(0 0 6px rgba(63,230,115,.7));
+}
+
+/* ============================================
+   PROVA SOCIAL — VÍDEO + DEPOIMENTOS
+   ============================================ */
+.social-proof{
+  padding:6rem 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 50% 0%, rgba(63,230,115,.10), transparent 70%),
+    linear-gradient(180deg, #0a3a1f 0%, #051f10 100%);
+  position:relative;overflow:hidden;
+}
+.sp-title{text-align:center;margin-bottom:3rem;position:relative;z-index:1}
+.sp-title .eyebrow{
+  display:inline-block;
+  background: linear-gradient(135deg, var(--amarelo), var(--dourado));
+  color: var(--preto-stadium);
+  font-family:var(--font-display);
+  font-size:.85rem;letter-spacing:3px;
+  padding:.45rem 1.2rem;border-radius:50px;
+  margin-bottom:1.2rem;
+  box-shadow: 0 6px 18px rgba(255,210,0,.4);
+}
+.sp-title h2{
+  font-family:var(--font-display);
+  font-size:clamp(2rem, 4.5vw, 3.4rem);
+  letter-spacing:1px;line-height:1;
+  color:var(--branco);
+  margin-bottom:.8rem;
+}
+.sp-title h2 .y{color:var(--amarelo)}
+.sp-title p{color:#cfe5d4;font-size:1.05rem;max-width:560px;margin:0 auto}
+
+/* Vídeo central */
+.video-wrap{
+  max-width:820px;margin:0 auto 3rem;
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  border:3px solid var(--amarelo);
+  box-shadow:
+    0 0 0 6px rgba(255,210,0,.15),
+    0 25px 60px rgba(0,0,0,.6),
+    0 0 40px rgba(255,210,0,.25);
+  background:#000;
+}
+.video-wrap::before{
+  content:"";
+  display:block;
+  padding-top:56.25%; /* 16:9 */
+}
+.video-wrap iframe,
+.video-wrap video{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  border:none;
+}
+.video-badge{
+  position:absolute;top:14px;left:14px;
+  background: linear-gradient(180deg, #ff3a3a, #c8161d);
+  color:#fff;
+  font-family:var(--font-display);
+  font-size:.8rem;letter-spacing:2px;
+  padding:.35rem .9rem;border-radius:50px;
+  z-index:5;
+  box-shadow:0 4px 12px rgba(200,22,29,.5);
+  display:inline-flex;align-items:center;gap:.4rem;
+}
+.video-badge .dot{
+  width:8px;height:8px;border-radius:50%;background:#fff;
+  animation:pulse 1.4s infinite;
+}
+
+/* Carrossel de depoimentos */
+.testimonials-wrap{
+  position:relative;
+  max-width:920px;margin:0 auto 3rem;
+}
+.testimonials{
+  display:flex;
+  gap:1.2rem;
+  overflow-x:auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding:.5rem .25rem 1rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+.testimonials::-webkit-scrollbar{display:none} /* Chrome/Safari */
+.testimonial{
+  flex: 0 0 calc(50% - .6rem);
+  scroll-snap-align: center;
+  background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+  border:2px solid rgba(255,210,0,.3);
+  border-radius:16px;
+  padding:1.4rem 1.5rem;
+  position:relative;
+  transition:border-color .3s, transform .3s;
+  min-width: 0;
+}
+.testimonial:hover{border-color:var(--amarelo);transform:translateY(-4px)}
+.testimonial .stars{
+  color:var(--amarelo);
+  font-size:1.1rem;
+  letter-spacing:2px;
+  margin-bottom:.6rem;
+  text-shadow:0 0 8px rgba(255,210,0,.4);
+}
+.testimonial .quote{
+  color:#e5f2e8;
+  font-size:.95rem;line-height:1.5;
+  margin-bottom:1rem;
+  font-style: italic;
+}
+.testimonial .person{
+  display:flex;align-items:center;gap:.7rem;
+  border-top:1px solid rgba(255,210,0,.15);
+  padding-top:.9rem;
+}
+.testimonial .avatar{
+  width:42px;height:42px;border-radius:50%;
+  background: linear-gradient(135deg, var(--verde-claro), var(--amarelo));
+  display:flex;align-items:center;justify-content:center;
+  color:var(--preto-stadium);
+  font-family:var(--font-display);
+  font-size:1.1rem;letter-spacing:1px;
+  flex-shrink:0;
+}
+.testimonial .person-info .nm{
+  font-weight:700;color:var(--branco);font-size:.92rem;line-height:1.1;
+}
+.testimonial .person-info .tg{
+  color:#9ec4a8;font-size:.78rem;margin-top:2px;
+  display:flex;align-items:center;gap:.3rem;
+  flex-wrap:wrap;
+}
+.testimonial .verified{
+  color:var(--verde-neon);font-size:.75rem;
+}
+
+/* Setas do carrossel */
+.car-arrow{
+  position:absolute;top:50%;
+  transform:translateY(-50%);
+  width:46px;height:46px;border-radius:50%;
+  background:var(--amarelo);
+  color:var(--preto-stadium);
+  border:2px solid var(--dourado);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;font-weight:900;
+  cursor:pointer;
+  z-index:5;
+  box-shadow:0 8px 22px rgba(0,0,0,.5), 0 0 0 4px rgba(255,210,0,.15);
+  transition: transform .2s, filter .2s;
+  font-family: var(--font-display);
+}
+.car-arrow:hover{transform:translateY(-50%) scale(1.1);filter:brightness(1.1)}
+.car-arrow:active{transform:translateY(-50%) scale(.95)}
+.car-arrow.prev{left:-12px}
+.car-arrow.next{right:-12px}
+
+/* Dots indicadores */
+.car-dots{
+  display:flex;justify-content:center;gap:.5rem;
+  margin-top:.5rem;
+}
+.car-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:rgba(255,210,0,.3);
+  cursor:pointer;
+  transition:background .3s, transform .3s;
+  border:none;
+}
+.car-dot.active{
+  background:var(--amarelo);
+  transform:scale(1.3);
+  box-shadow:0 0 8px rgba(255,210,0,.6);
+}
+
+/* Grid de vídeos verticais (depoimentos em vídeo) */
+.proof-videos{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:1.5rem;
+  max-width:680px;margin:0 auto;
+}
+.proof-video{
+  position:relative;
+  aspect-ratio: 9/16;
+  border-radius:18px;
+  overflow:hidden;
+  border:3px solid var(--amarelo);
+  box-shadow:
+    0 0 0 5px rgba(255,210,0,.12),
+    0 20px 50px rgba(0,0,0,.6),
+    0 0 35px rgba(255,210,0,.2);
+  background:#000;
+  transition: transform .35s;
+}
+.proof-video:hover{transform: translateY(-6px) scale(1.02)}
+.proof-video video{
+  width:100%;height:100%;object-fit:cover;
+  display:block;
+}
+.proof-video .tag{
+  position:absolute;top:10px;left:10px;
+  background: var(--amarelo);
+  color: var(--preto-stadium);
+  font-family:var(--font-display);
+  font-size:.7rem;letter-spacing:1.5px;
+  padding:4px 9px;border-radius:5px;
+  z-index:2;
+  box-shadow:0 4px 10px rgba(0,0,0,.4);
+}
+.proof-video .tag-live{
+  background: linear-gradient(180deg, #ff3a3a, #c8161d);
+  color:#fff;
+  display:inline-flex;align-items:center;gap:.4rem;
+}
+.proof-video .tag-live .dot{
+  width:6px;height:6px;border-radius:50%;background:#fff;
+  animation:pulse 1.4s infinite;
+}
+
+/* Stats de prova social */
+.proof-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;
+  max-width:720px;margin:3rem auto 0;
+  padding-top:2rem;
+  border-top:2px solid rgba(255,210,0,.2);
+  text-align:center;
+}
+.proof-stat .num{
+  font-family:var(--font-display);
+  font-size:clamp(2rem, 5vw, 3.2rem);
+  color:var(--amarelo);
+  text-shadow:0 0 14px rgba(255,210,0,.5);
+  line-height:1;
+}
+.proof-stat .lbl{
+  font-size:.8rem;color:#cfe5d4;letter-spacing:2px;
+  text-transform:uppercase;margin-top:.3rem;
+}
+
+/* ============================================
+   RESPONSIVO — MOBILE FIRST CHECK
+   ============================================ */
+@media (max-width: 960px){
+  .seals-grid{grid-template-columns: repeat(2, 1fr)}
+  .scoreboard .row{grid-template-columns:repeat(2,1fr);gap:1.5rem}
+  .gua-grid{grid-template-columns:repeat(2,1fr)}
+  .extras-grid{grid-template-columns:1fr;gap:2rem}
+  .extras-mockup:not(.video-wrap){height:400px;max-width:500px;margin:0 auto}
+  .proof-videos{max-width:480px}
+  nav .nav-cta{display:none}
+}
+@media (max-width: 560px){
+  .flags-track{font-size:1.3rem;gap:.6rem}
+  .flags-bar{padding-top:5rem}
+  .hero h1{font-size:3rem}
+  .ribbon-pdf{font-size:1.1rem;padding:.6rem 1.4rem}
+  .seals-grid{grid-template-columns: 1fr;gap:.6rem}
+  .seal-box .txt{font-size:.8rem}
+  .seal-box .txt .hl{font-size:.95rem}
+  .gua-grid{grid-template-columns:1fr}
+  .btn{padding:.95rem 1.6rem;font-size:1.05rem}
+  .btn-cta{font-size:1.2rem;padding:1.1rem 1.8rem}
+  .price-row{gap:1rem}
+  .sticker-card{width:130px}
+  .s-card-1{left:0}
+  .s-card-3{right:0}
+  .s-card-4{left:8%}
+  .s-card-5{right:12%}
+  .timer-display{padding:.8rem 1rem;gap:.3rem}
+  .offer-box{padding:2.5rem 1.3rem}
+  .eyebrow-ribbon{font-size:.78rem;letter-spacing:1px;padding:.45rem 1rem}
+  .testimonials{grid-template-columns: 1fr}
+  .testimonial{flex: 0 0 calc(100% - .5rem)}
+  .car-arrow{width:38px;height:38px;font-size:1.1rem}
+  .car-arrow.prev{left:4px}
+  .car-arrow.next{right:4px}
+  .proof-stats{grid-template-columns: 1fr;gap:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <div class="container">
+    <a href="#" class="logo">
+      <span class="logo-ball"></span>
+      ÁLBUM <span class="y">COPA 2026</span>
+    </a>
+    <a href="#oferta" class="btn btn-primary nav-cta">QUERO BAIXAR</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero stadium-bg">
+
+  <!-- Bandeiras topo -->
+  <div class="flags-bar">
+    <div class="flags-track">
+      <span>🇧🇷</span><span>🇦🇷</span><span>🇫🇷</span><span>🇵🇹</span>
+      <span>🇪🇸</span><span>🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span>🇩🇪</span><span>🇳🇱</span>
+      <span>🇮🇹</span><span>🇺🇾</span><span>🇭🇷</span><span>🇲🇦</span>
+      <span>🇲🇽</span><span>🇪🇨</span><span>🇨🇴</span><span>🇯🇵</span>
+    </div>
+  </div>
+
+  <!-- Confetes -->
+  <div class="hero-confettis" id="confettis" aria-hidden="true"></div>
+
+  <div class="container hero-content">
+
+    <span class="eyebrow-ribbon">A COLEÇÃO DEFINITIVA PARA IMPRIMIR E COMPLETAR!</span>
+
+    <h1 class="title-3d">
+      <span class="line">TODAS</span>
+      <span class="line title-3d yellow">FIGURINHAS</span>
+      <span class="line"><span style="color:#fff">COPA</span> <span class="title-3d yellow" style="display:inline">2026</span></span>
+    </h1>
+
+    <div class="hero-cta-wrap">
+      <a href="#oferta" class="btn btn-primary btn-cta">⚡ BAIXE AGORA — R$19,99</a>
+      <p class="hero-sub">Acesso imediato e exclusivo por tempo limitado.</p>
+    </div>
+
+    <!-- 4 SELOS PRINCIPAIS -->
+    <div class="seals-grid">
+      <div class="seal-box">
+        <span class="ico">📄</span>
+        <span class="txt"><span class="hl">101 PÁGINAS</span>PDF COMPLETO</span>
+      </div>
+      <div class="seal-box">
+        <span class="ico">⚽</span>
+        <span class="txt"><span class="hl">TODAS</span>FIGURINHAS COPA 2026</span>
+      </div>
+      <div class="seal-box">
+        <span class="ico">⬇️</span>
+        <span class="txt"><span class="hl">DOWNLOAD</span>IMEDIATO</span>
+      </div>
+      <div class="seal-box">
+        <span class="ico">🖨️</span>
+        <span class="txt"><span class="hl">PRONTO</span>PARA IMPRIMIR EM ALTA QUALIDADE</span>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- ===== CRONÔMETRO ===== -->
+<section class="timer-section">
+  <div class="container timer-wrap">
+    <div class="timer-label">⏱ TEMPO PARA CADA ACESSO</div>
+    <div class="timer-display" id="timerDisplay">
+      <div class="timer-block">
+        <div class="digits" id="minutes">15</div>
+        <div class="lbl">MIN</div>
+      </div>
+      <div class="timer-sep">:</div>
+      <div class="timer-block">
+        <div class="digits" id="seconds">00</div>
+        <div class="lbl">SEG</div>
+      </div>
+    </div>
+    <div class="timer-urgency">
+      <span class="pulse-dot"></span>
+      <span>Sua oferta especial expira em instantes</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PLACAR ===== -->
+<section class="scoreboard">
+  <div class="container">
+    <div class="row">
+      <div class="score-item">
+        <div class="num">+900</div>
+        <div class="lbl">Figurinhas</div>
+      </div>
+      <div class="score-item">
+        <div class="num">101</div>
+        <div class="lbl">Páginas</div>
+      </div>
+      <div class="score-item">
+        <div class="num">48</div>
+        <div class="lbl">Seleções</div>
+      </div>
+      <div class="score-item">
+        <div class="num">100%</div>
+        <div class="lbl">Digital</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPARAÇÃO ORIGINAL vs PDF ===== -->
+<section class="comparison">
+  <div class="container">
+    <div class="comp-title">
+      <span class="eyebrow">★ COMPARE VOCÊ MESMO ★</span>
+      <h2>RESULTADO <span class="y">IDÊNTICO AO ORIGINAL</span></h2>
+    </div>
+
+    <div class="comp-frame">
+      <img src="comparacao-original-pdf.jpg" alt="Comparação entre a figurinha original da Copa e a impressão do PDF — resultado idêntico" />
+    </div>
+
+    <div class="comp-badges">
+      <span class="comp-badge"><span class="ico">✓</span> Cores fiéis</span>
+      <span class="comp-badge"><span class="ico">✓</span> Alta resolução</span>
+      <span class="comp-badge"><span class="ico">✓</span> Tamanho real</span>
+      <span class="comp-badge"><span class="ico">✓</span> Pronto pra imprimir</span>
+    </div>
+
+    <div class="comp-cta">
+      <a href="#oferta" class="btn btn-primary btn-cta">⚡ QUERO O MEU AGORA — R$19,99</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROVA SOCIAL ===== -->
+<section class="social-proof">
+  <div class="container">
+
+    <div class="sp-title">
+      <span class="eyebrow">★ PROVA SOCIAL ★</span>
+      <h2>QUEM JÁ TEM <span class="y">RECOMENDA</span></h2>
+      <p>Veja o que os colecionadores estão dizendo sobre a coleção.</p>
+    </div>
+
+    <!-- DEPOIMENTOS — CARROSSEL -->
+    <div class="testimonials-wrap">
+      <button class="car-arrow prev" id="carPrev" aria-label="Anterior">‹</button>
+      <button class="car-arrow next" id="carNext" aria-label="Próximo">›</button>
+
+      <div class="testimonials" id="testimonialsCar">
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Cara, ficou perfeito! Imprimi todas as figurinhas e meu filho amou. Material super organizado, qualidade impecável."</p>
+          <div class="person">
+            <div class="avatar">RC</div>
+            <div class="person-info">
+              <div class="nm">Rafael Carvalho</div>
+              <div class="tg">São Paulo · SP <span class="verified">✓ Compra verificada</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Recebi na hora por email, baixei e já tava no celular. Os extras então são um show à parte, vale cada centavo!"</p>
+          <div class="person">
+            <div class="avatar">JM</div>
+            <div class="person-info">
+              <div class="nm">Juliana Mendes</div>
+              <div class="tg">Rio de Janeiro · RJ <span class="verified">✓ Compra verificada</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Sou colecionador há anos e nunca vi material tão completo. Todas as seleções, jogadores, tudo bem organizado por país."</p>
+          <div class="person">
+            <div class="avatar">LP</div>
+            <div class="person-info">
+              <div class="nm">Lucas Pereira</div>
+              <div class="tg">Belo Horizonte · MG <span class="verified">✓ Compra verificada</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Comprei pra dar de presente pro meu sobrinho e ele ficou maluco. Já imprimimos e colamos no álbum dele. Recomendo demais!"</p>
+          <div class="person">
+            <div class="avatar">AS</div>
+            <div class="person-info">
+              <div class="nm">Amanda Souza</div>
+              <div class="tg">Curitiba · PR <span class="verified">✓ Compra verificada</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-dots" id="carDots"></div>
+    </div>
+
+    <!-- 2 VÍDEOS DE DEPOIMENTO -->
+    <div class="proof-videos">
+      <div class="proof-video">
+        <span class="tag tag-live"><span class="dot"></span> CLIENTE REAL</span>
+        <video
+          src="video-1.mp4"
+          autoplay muted loop playsinline
+          controls
+          preload="metadata">
+          Seu navegador não suporta vídeo.
+        </video>
+      </div>
+      <div class="proof-video">
+        <span class="tag tag-live"><span class="dot"></span> CLIENTE REAL</span>
+        <video
+          src="video-2.mp4"
+          autoplay muted loop playsinline
+          controls
+          preload="metadata">
+          Seu navegador não suporta vídeo.
+        </video>
+      </div>
+    </div>
+
+    <!-- STATS DE PROVA SOCIAL -->
+    <div class="proof-stats">
+      <div class="proof-stat">
+        <div class="num">+2.500</div>
+        <div class="lbl">Downloads</div>
+      </div>
+      <div class="proof-stat">
+        <div class="num">4.9★</div>
+        <div class="lbl">Avaliação Média</div>
+      </div>
+      <div class="proof-stat">
+        <div class="num">98%</div>
+        <div class="lbl">Recomendam</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== OFERTA ===== -->
+<section class="offer stadium-bg" id="oferta">
+  <div class="container">
+    <div class="offer-box">
+      <div class="offer-tag">⚡ OFERTA ESPECIAL</div>
+      <h2>SUA COLEÇÃO COMPLETA DA COPA<br><span style="color:var(--amarelo)">POR MENOS DE UM PACOTE DE FIGURINHAS</span></h2>
+
+      <div class="price-row">
+        <div class="price-old">
+          <span class="lbl">DE:</span>
+          R$ 65,99
+        </div>
+        <div class="price-new-wrap">
+          <span class="lbl">POR APENAS:</span>
+          <div class="price-new">
+            <span class="currency">R$</span>19<span class="cents">,99</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-sub">Pagamento único • PIX, cartão ou boleto</div>
+
+      <a href="#" class="btn btn-primary btn-cta" onclick="celebrate(event)">
+        🏆 GARANTIR MEU PDF DA COPA
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GARANTIAS ===== -->
+<section class="guarantees">
+  <div class="container">
+    <div class="gua-grid">
+      <div class="gua-item">
+        <div class="gua-icon">🏅</div>
+        <h4>QUALIDADE <span class="y">PREMIUM</span></h4>
+        <p>PDF em alta resolução, nítido em qualquer tela</p>
+      </div>
+      <div class="gua-item">
+        <div class="gua-icon">🛡️</div>
+        <h4>CONTEÚDO <span class="y">COMPLETO</span></h4>
+        <p>Todas as figurinhas + extras exclusivos</p>
+      </div>
+      <div class="gua-item">
+        <div class="gua-icon">⚡</div>
+        <h4>SEM <span class="y">MENSALIDADE</span></h4>
+        <p>Pague uma única vez e tenha acesso para sempre</p>
+      </div>
+      <div class="gua-item">
+        <div class="gua-icon">🔒</div>
+        <h4>100% <span class="y">EXCLUSIVO</span></h4>
+        <p>Material feito para fãs que querem a coleção completa</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div class="container">
+    <div class="faq-title">
+      <div class="eyebrow">★ PERGUNTAS FREQUENTES ★</div>
+      <h2>TIRE SUAS DÚVIDAS</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Como recebo o PDF após a compra?</div>
+        <div class="faq-a">Assim que o pagamento é confirmado (instantâneo no PIX), você recebe o link de download por email e também na tela de confirmação. É só clicar e baixar.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Posso abrir o PDF no celular?</div>
+        <div class="faq-a">Sim! O PDF abre em qualquer celular (iPhone ou Android), tablet, notebook ou computador. É só ter um leitor de PDF — todos os dispositivos modernos já vêm com um.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">O acesso é mesmo vitalício?</div>
+        <div class="faq-a">Sim, 100%. Você paga uma única vez e o arquivo é seu pra sempre. Sem assinatura, sem mensalidade, sem renovação.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Posso imprimir as cartinhas?</div>
+        <div class="faq-a">Pode sim! Como as imagens estão em alta qualidade, você pode imprimir em casa ou em uma gráfica, com ótimo resultado. O arquivo já vem pronto para impressão.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">A qualidade das imagens é boa mesmo?</div>
+        <div class="faq-a">Sim. Todas as figurinhas estão em alta resolução, com cores vibrantes e detalhes nítidos. Você pode dar zoom sem perder qualidade.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="final-cta">
+  <div class="container">
+    <div class="trophy">🏆</div>
+    <h2>VIVA A EMOÇÃO DA <span class="y">COPA 2026!</span></h2>
+    <p>Tenha todas as figurinhas na palma da sua mão.</p>
+    <a href="#oferta" class="btn btn-primary btn-cta">QUERO MINHA COLEÇÃO AGORA ⚡</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="logo">
+      <span class="logo-ball"></span>
+      ÁLBUM <span class="y">COPA 2026</span>
+    </div>
+    <p>© 2026 Álbum da Copa — Todos os direitos reservados.</p>
+    <p>Projeto acadêmico • Publicidade e Propaganda</p>
+    <p class="disc">Este é um projeto fictício de caráter educacional, sem qualquer vínculo, afiliação ou endosso da FIFA, Panini ou de qualquer entidade oficial.</p>
+  </div>
+</footer>
+
+<script>
+/* ============================================
+   CONFETES no Hero
+   ============================================ */
+(function makeConfetti(){
+  const cores = ['#ffd200','#3fe673','#1ea64a','#ffffff','#e63946','#e6b450'];
+  const box = document.getElementById('confettis');
+  if(!box) return;
+  const N = 35;
+  for(let i=0;i<N;i++){
+    const c = document.createElement('span');
+    c.className = 'confetti';
+    c.style.left = Math.random()*100 + '%';
+    c.style.background = cores[Math.floor(Math.random()*cores.length)];
+    c.style.animationDuration = (4 + Math.random()*5) + 's';
+    c.style.animationDelay = (Math.random()*6) + 's';
+    c.style.width = (6 + Math.random()*8) + 'px';
+    c.style.height = (10 + Math.random()*8) + 'px';
+    c.style.borderRadius = Math.random() > .5 ? '2px' : '50%';
+    box.appendChild(c);
+  }
+})();
+
+/* ============================================
+   CRONÔMETRO 15:00 — reinicia a cada acesso
+   ============================================ */
+(function timer(){
+  // Sempre começa em 15:00 ao carregar a página (cada novo acesso)
+  let totalSec = 15 * 60;
+  const minEl = document.getElementById('minutes');
+  const secEl = document.getElementById('seconds');
+  const display = document.getElementById('timerDisplay');
+
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  function render(){
+    const m = Math.floor(totalSec / 60);
+    const s = totalSec % 60;
+    minEl.textContent = pad(m);
+    secEl.textContent = pad(s);
+  }
+  render();
+
+  const interval = setInterval(() => {
+    totalSec--;
+    if (totalSec <= 0) {
+      clearInterval(interval);
+      display.innerHTML = '<div class="timer-expired">⚡ TEMPO ENCERRADO — RECARREGUE PARA NOVO ACESSO</div>';
+      return;
+    }
+    render();
+
+    // Efeito de pulso nos últimos 60 segundos
+    if (totalSec < 60) {
+      display.style.animation = 'pulse 1s ease-in-out infinite';
+    }
+  }, 1000);
+})();
+
+/* ============================================
+   FAQ accordion
+   ============================================ */
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click', ()=>{
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!open) item.classList.add('open');
+  });
+});
+
+/* ============================================
+   Celebração ao clicar no CTA principal
+   ============================================ */
+function celebrate(e){
+  e.preventDefault();
+  const cores = ['#ffd200','#3fe673','#1ea64a','#ffffff','#e63946'];
+  for(let i=0;i<90;i++){
+    const c = document.createElement('span');
+    c.style.position='fixed';
+    c.style.left='50%';
+    c.style.top='50%';
+    c.style.width = (6 + Math.random()*8) + 'px';
+    c.style.height = (10 + Math.random()*10) + 'px';
+    c.style.background = cores[Math.floor(Math.random()*cores.length)];
+    c.style.borderRadius = Math.random() > .5 ? '2px' : '50%';
+    c.style.pointerEvents='none';
+    c.style.zIndex='9999';
+    const ang = Math.random()*Math.PI*2;
+    const vel = 200 + Math.random()*400;
+    const dx = Math.cos(ang)*vel;
+    const dy = Math.sin(ang)*vel;
+    c.animate([
+      {transform:'translate(-50%,-50%) rotate(0)',opacity:1},
+      {transform:`translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) rotate(${720+Math.random()*360}deg)`,opacity:0}
+    ], { duration: 1400 + Math.random()*800, easing:'cubic-bezier(.2,.7,.2,1)'}).onfinish = ()=>c.remove();
+    document.body.appendChild(c);
+  }
+  setTimeout(()=>{
+    alert('🏆 Em uma versão real, você seria redirecionado para o checkout!\n\n(Este é o projeto acadêmico — landing page para vendas de PDF da Copa 2026.)');
+  }, 600);
+}
+
+/* ============================================
+   CARROSSEL DE DEPOIMENTOS
+   ============================================ */
+(function carousel(){
+  const car = document.getElementById('testimonialsCar');
+  const prev = document.getElementById('carPrev');
+  const next = document.getElementById('carNext');
+  const dotsBox = document.getElementById('carDots');
+  if(!car || !prev || !next) return;
+
+  const cards = car.querySelectorAll('.testimonial');
+  const total = cards.length;
+
+  // Cria os dots
+  for(let i = 0; i < total; i++){
+    const d = document.createElement('button');
+    d.className = 'car-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', `Depoimento ${i+1}`);
+    d.addEventListener('click', () => scrollToCard(i));
+    dotsBox.appendChild(d);
+  }
+  const dots = dotsBox.querySelectorAll('.car-dot');
+
+  function scrollToCard(idx){
+    const card = cards[idx];
+    if(!card) return;
+    const carRect = car.getBoundingClientRect();
+    const cardRect = card.getBoundingClientRect();
+    const offset = cardRect.left - carRect.left + car.scrollLeft - (carRect.width - cardRect.width) / 2;
+    car.scrollTo({ left: offset, behavior: 'smooth' });
+  }
+
+  function getCurrentIndex(){
+    const carRect = car.getBoundingClientRect();
+    const carCenter = carRect.left + carRect.width / 2;
+    let closest = 0, minDist = Infinity;
+    cards.forEach((c, i) => {
+      const r = c.getBoundingClientRect();
+      const center = r.left + r.width / 2;
+      const dist = Math.abs(center - carCenter);
+      if(dist < minDist){ minDist = dist; closest = i; }
+    });
+    return closest;
+  }
+
+  function updateDots(){
+    const i = getCurrentIndex();
+    dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+  }
+
+  next.addEventListener('click', () => {
+    const i = getCurrentIndex();
+    scrollToCard(Math.min(i + 1, total - 1));
+  });
+  prev.addEventListener('click', () => {
+    const i = getCurrentIndex();
+    scrollToCard(Math.max(i - 1, 0));
+  });
+
+  let scrollTimer;
+  car.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(updateDots, 100);
+  });
+
+  // Auto-play (opcional — avança a cada 6s)
+  let autoTimer = setInterval(() => {
+    const i = getCurrentIndex();
+    const nextIdx = (i + 1) % total;
+    scrollToCard(nextIdx);
+  }, 6000);
+  // Para o auto-play se o usuário interagir
+  ['mousedown','touchstart','click'].forEach(ev => {
+    car.addEventListener(ev, () => clearInterval(autoTimer));
+    prev.addEventListener(ev, () => clearInterval(autoTimer));
+    next.addEventListener(ev, () => clearInterval(autoTimer));
+  });
+})();
+
+/* ============================================
+   Reveal ao entrar na viewport
+   ============================================ */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      en.target.style.opacity = 1;
+      en.target.style.transform = 'translateY(0)';
+      io.unobserve(en.target);
+    }
+  });
+}, {threshold:.1});
+
+document.querySelectorAll('.seal-box, .score-item, .sticker-card, .gua-item, .faq-item, .proof-video, .proof-stat, .comp-badge').forEach((el,i)=>{
+  el.style.opacity = 0;
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = `opacity .5s ease ${i*0.04}s, transform .5s ease ${i*0.04}s`;
+  io.observe(el);
+});
+</script>
+
+</body>
+</html>
