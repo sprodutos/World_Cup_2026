@@ -1201,7 +1201,7 @@ footer .disc{font-size:.78rem;color:#5e7b66;margin-top:1rem;max-width:520px;marg
       <span class="logo-ball"></span>
       ÁLBUM <span class="y">COPA 2026</span>
     </a>
-    <a href="#oferta" class="btn btn-primary nav-cta">QUERO BAIXAR</a>
+    <a href="https://go.perfectpay.com.br/PPU38CQCMR5" target="_blank" rel="noopener" class="btn btn-primary nav-cta">QUERO BAIXAR</a>
   </div>
 </nav>
 
@@ -1232,7 +1232,7 @@ footer .disc{font-size:.78rem;color:#5e7b66;margin-top:1rem;max-width:520px;marg
     </h1>
 
     <div class="hero-cta-wrap">
-      <a href="#oferta" class="btn btn-primary btn-cta">⚡ BAIXE AGORA — R$19,99</a>
+      <a href="https://go.perfectpay.com.br/PPU38CQCMR5" target="_blank" rel="noopener" class="btn btn-primary btn-cta">⚡ BAIXE AGORA — R$19,99</a>
       <p class="hero-sub">Acesso imediato e exclusivo por tempo limitado.</p>
     </div>
 
@@ -1325,7 +1325,7 @@ footer .disc{font-size:.78rem;color:#5e7b66;margin-top:1rem;max-width:520px;marg
     </div>
 
     <div class="comp-cta">
-      <a href="#oferta" class="btn btn-primary btn-cta">⚡ QUERO O MEU AGORA — R$19,99</a>
+      <a href="https://go.perfectpay.com.br/PPU38CQCMR5" target="_blank" rel="noopener" class="btn btn-primary btn-cta">⚡ QUERO O MEU AGORA — R$19,99</a>
     </div>
   </div>
 </section>
@@ -1463,7 +1463,7 @@ footer .disc{font-size:.78rem;color:#5e7b66;margin-top:1rem;max-width:520px;marg
 
       <div class="price-sub">Pagamento único • PIX, cartão ou boleto</div>
 
-      <a href="#" class="btn btn-primary btn-cta" onclick="celebrate(event)">
+      <a href="https://go.perfectpay.com.br/PPU38CQCMR5" target="_blank" rel="noopener" class="btn btn-primary btn-cta" onclick="celebrate(event)">
         🏆 GARANTIR MEU PDF DA COPA
       </a>
     </div>
@@ -1536,7 +1536,7 @@ footer .disc{font-size:.78rem;color:#5e7b66;margin-top:1rem;max-width:520px;marg
     <div class="trophy">🏆</div>
     <h2>VIVA A EMOÇÃO DA <span class="y">COPA 2026!</span></h2>
     <p>Tenha todas as figurinhas na palma da sua mão.</p>
-    <a href="#oferta" class="btn btn-primary btn-cta">QUERO MINHA COLEÇÃO AGORA ⚡</a>
+    <a href="https://go.perfectpay.com.br/PPU38CQCMR5" target="_blank" rel="noopener" class="btn btn-primary btn-cta">QUERO MINHA COLEÇÃO AGORA ⚡</a>
   </div>
 </section>
 
@@ -1624,9 +1624,10 @@ document.querySelectorAll('.faq-item').forEach(item=>{
 
 /* ============================================
    Celebração ao clicar no CTA principal
+   (não impede o link de funcionar — só dispara os confetes
+   antes do navegador abrir a página de checkout)
    ============================================ */
 function celebrate(e){
-  e.preventDefault();
   const cores = ['#ffd200','#3fe673','#1ea64a','#ffffff','#e63946'];
   for(let i=0;i<90;i++){
     const c = document.createElement('span');
@@ -1649,9 +1650,6 @@ function celebrate(e){
     ], { duration: 1400 + Math.random()*800, easing:'cubic-bezier(.2,.7,.2,1)'}).onfinish = ()=>c.remove();
     document.body.appendChild(c);
   }
-  setTimeout(()=>{
-    alert('🏆 Em uma versão real, você seria redirecionado para o checkout!\n\n(Este é o projeto acadêmico — landing page para vendas de PDF da Copa 2026.)');
-  }, 600);
 }
 
 /* ============================================
